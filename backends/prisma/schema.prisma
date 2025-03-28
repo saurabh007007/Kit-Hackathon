@@ -12,3 +12,23 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// schema.prisma
+// schema.prisma
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(50) // name with max length 50
+  email     String   @unique        // email should be unique
+  password  String   @db.VarChar(128) // password max length of 128 characters
+   // Automatically update the date when modified
+}
+
+model Feedback {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(50)  // name with max length 50
+  email     String   @db.VarChar(100) // email with max length of 100 characters
+  feedback  String   @db.Text         // Text field for feedback, no strict character limit
+  rating    Int      // Rating as integer
+  createdAt DateTime @default(now())  // Automatically set the creation date
+  updatedAt DateTime @updatedAt      // Automatically update the date when modified
+}

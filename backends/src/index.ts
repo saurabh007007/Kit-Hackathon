@@ -6,6 +6,12 @@ import { ContentBlock, TextBlock } from "@anthropic-ai/sdk/resources";
 import { basePrompt as nodeBasePrompt } from "./defaults/node";
 import { basePrompt as reactBasePrompt } from "./defaults/react";
 import cors from "cors";
+import {
+  loginUser,
+  registerUser,
+  logout,
+  Feedback,
+} from "./controllers/userContoller";
 
 const PORT = process.env.PORT || 3001;
 
@@ -71,6 +77,11 @@ app.post("/chat", async (req, res) => {
     response: (response.content[0] as TextBlock)?.text,
   });
 });
+
+app.post("/login", loginUser);
+app.post("/register", registerUser);
+app.get("/logout", logout);
+app.post("/feedback", Feedback);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -13,7 +13,7 @@ import { Navbar } from "../Home/HeroSection";
 import { Link } from "react-router-dom";
 import ahana from "../../assets/ahana.jpg";
 import saurabh from "../../assets/saurabh.png";
-import FeedbackForm from "./Feedback";
+// import FeedbackForm from "./Feedback";
 
 export default function AboutUs() {
   return (
@@ -159,7 +159,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <FeedbackForm />
+      {/* <FeedbackForm /> */}
     </div>
   );
 }

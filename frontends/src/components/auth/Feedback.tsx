@@ -8,6 +8,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
+import { Navbar } from "../Home/HeroSection";
 
 interface FormData {
   name: string;
@@ -81,77 +82,80 @@ const FeedbackForm: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center mb-6">
-          User Feedback
-        </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-            />
-            {errors.name && (
-              <span className="text-red-500 text-sm">{errors.name}</span>
-            )}
-          </div>
+    <>
+      <Navbar />
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+          <h2 className="text-2xl font-semibold text-center mb-6">
+            User Feedback
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+              />
+              {errors.name && (
+                <span className="text-red-500 text-sm">{errors.name}</span>
+              )}
+            </div>
 
-          <div className="mb-4">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-            />
-            {errors.email && (
-              <span className="text-red-500 text-sm">{errors.email}</span>
-            )}
-          </div>
+            <div className="mb-4">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+              />
+              {errors.email && (
+                <span className="text-red-500 text-sm">{errors.email}</span>
+              )}
+            </div>
 
-          <div className="mb-4">
-            <Label htmlFor="feedback">Feedback</Label>
-            <Textarea
-              id="feedback"
-              name="feedback"
-              value={formData.feedback}
-              onChange={handleChange}
-              placeholder="Write your feedback..."
-            />
-            {errors.feedback && (
-              <span className="text-red-500 text-sm">{errors.feedback}</span>
-            )}
-          </div>
+            <div className="mb-4">
+              <Label htmlFor="feedback">Feedback</Label>
+              <Textarea
+                id="feedback"
+                name="feedback"
+                value={formData.feedback}
+                onChange={handleChange}
+                placeholder="Write your feedback..."
+              />
+              {errors.feedback && (
+                <span className="text-red-500 text-sm">{errors.feedback}</span>
+              )}
+            </div>
 
-          <div className="mb-6">
-            <Label htmlFor="rating">Rating</Label>
-            <Input
-              id="rating"
-              type="number"
-              name="rating"
-              value={formData.rating}
-              onChange={handleChange}
-              min={1}
-              max={5}
-            />
-            {errors.rating && (
-              <span className="text-red-500 text-sm">{errors.rating}</span>
-            )}
-          </div>
+            <div className="mb-6">
+              <Label htmlFor="rating">Rating</Label>
+              <Input
+                id="rating"
+                type="number"
+                name="rating"
+                value={formData.rating}
+                onChange={handleChange}
+                min={1}
+                max={5}
+              />
+              {errors.rating && (
+                <span className="text-red-500 text-sm">{errors.rating}</span>
+              )}
+            </div>
 
-          <Button type="submit" className="w-full">
-            Submit
-          </Button>
-        </form>
+            <Button type="submit" className="w-full">
+              Submit
+            </Button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

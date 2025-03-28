@@ -6,6 +6,7 @@ import { HeroSectionOne } from "./components/Home/HeroSection";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import AboutUs from "./components/auth/AboutUs";
+import FeedbackForm from "./components/auth/Feedback";
 // import AboutUs from "./components/auth/AboutUs";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
 
         <Route path="/builder" element={<Builder />} />
+        <Route path="/feedback" element={<FeedbackForm />} />
       </Routes>
     </BrowserRouter>
   );
