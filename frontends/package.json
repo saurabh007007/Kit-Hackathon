@@ -7,10 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "flowbite-react patch"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tabler/icons-react": "^3.31.0",
     "@types/xml2js": "^0.4.14",
     "@webcontainer/api": "^1.5.1",
@@ -19,6 +23,7 @@
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "events": "^3.3.0",
+    "flowbite-react": "^0.11.5",
     "lucide-react": "^0.344.0",
     "motion": "^12.6.2",
     "react": "^18.3.1",
@@ -26,6 +31,7 @@
     "react-router-dom": "^6.22.3",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
+    "tw-animate-css": "^1.2.5",
     "xml2js": "^0.6.2",
     "zod": "^3.24.2"
   },

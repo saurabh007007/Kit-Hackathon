@@ -34,3 +34,20 @@ export const UserLogin = z.object({
       "Password must contain at least one special character (e.g., @, #, $, etc.)"
     ),
 });
+
+export const UserFeedback = z.object({
+  name: z
+    .string()
+    .min(3, "Minimum Three Character is required")
+    .max(50, "Maximum Fifty Character is required"),
+
+  //Email Validation
+  email: z.string().email("Invalid Email Address"),
+  //Feedback Validation
+  feedback: z
+    .string()
+    .min(10, "Feedback must be at least 10 characters long")
+    .max(500, "Feedback must be less than 500 characters long"),
+  //Rating Validation
+  rating: z.number().min(1).max(5),
+});

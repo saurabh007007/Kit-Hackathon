@@ -1,8 +1,8 @@
-"use client";
-
 // import Image from "next/image";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import group from "../../assets/GROUP.jpg";
+import Footer from "./Footer";
 
 export function HeroSectionOne() {
   const navigate = useNavigate();
@@ -95,8 +95,7 @@ export function HeroSectionOne() {
         >
           <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
             <img
-              src="https://assets.aceternity.com/pro/aceternity-landing.webp"
-              alt="Landing page preview"
+              src={group}
               className="aspect-[16/9] h-auto w-full object-cover"
               height={1000}
               width={1000}
@@ -104,11 +103,12 @@ export function HeroSectionOne() {
           </div>
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 }
 
-const Navbar = () => {
+export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="flex w-full items-center justify-between border-t border-b border-neutral-200 px-4 py-4 dark:border-neutral-800">

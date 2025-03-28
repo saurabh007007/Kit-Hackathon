@@ -67,7 +67,7 @@ const Login: React.FC = () => {
         setErrors(validationErrors);
       } else {
         console.error(error);
-        alert("user not exist");
+        alert("An error occurred during login.");
         // alert("An error occurred during login.");
       }
     }

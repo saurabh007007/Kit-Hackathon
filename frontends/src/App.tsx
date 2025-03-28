@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Builder } from "./pages/Builder";
@@ -6,6 +5,8 @@ import { Builder } from "./pages/Builder";
 import { HeroSectionOne } from "./components/Home/HeroSection";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
+import AboutUs from "./components/auth/AboutUs";
+// import AboutUs from "./components/auth/AboutUs";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HeroSectionOne />} />
         <Route path="/login" element={<Login />} />
+
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/chat" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
 
